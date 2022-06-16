@@ -84,103 +84,105 @@ namespace Scripts.TIM
     // the game, some from the community workshop).      
     //NATO_5p56x45mm,,,,NATO_5p56x45mmMagazine    - deprecated after patch 1.980
     const string DEFAULT_ITEMS = @"
-                                    AmmoMagazine/
-                                    /Missile200mm
-                                    /NATO_25x184mm,,,,NATO_25x184mmMagazine  
-                                    /AutomaticRifleGun_Mag_20rd,,,,
-                                    /ElitePistolMagazine,,,,
-                                    /FullAutoPistolMagazine,,,,
-                                    /PreciseAutomaticRifleGun_Mag_5rd,,,,
-                                    /RapidFireAutomaticRifleGun_Mag_50rd,,,,
-                                    /SemiAutoPistolMagazine,,,,
-                                    /UltimateAutomaticRifleGun_Mag_30rd,,,,
-                                    /LargeCalibreAmmo,,,,
-                                    /MediumCalibreAmmo,,,,
-                                    /AutocannonClip,,,,
-                                    /LargeRailgunAmmo,,,,
-                                    /SmallRailgunAmmo,,,,                                    
+AmmoMagazine/
+/AutocannonClip
+/AutomaticRifleGun_Mag_20rd
+/ElitePistolMagazine
+/FullAutoPistolMagazine
+/LargeCalibreAmmo
+/LargeRailgunAmmo
+/MediumCalibreAmmo
+/Missile200mm
+/NATO_25x184mm
+/NATO_5p56x45mm
+/PreciseAutomaticRifleGun_Mag_5rd
+/RapidFireAutomaticRifleGun_Mag_50rd
+/SemiAutoPistolMagazine
+/SmallRailgunAmmo
+/UltimateAutomaticRifleGun_Mag_30rd
 
-                                    Component/
-                                    /BulletproofGlass,50,2%
-                                    /Computer,30,5%,,ComputerComponent
-                                    /Construction,150,20%,,ConstructionComponent
-                                    /Detector,10,0.1%,,DetectorComponent
-                                    /Display,10,0.5%
-                                    /Explosives,5,0.1%,,ExplosivesComponent
-                                    /Girder,10,0.5%,,GirderComponent
-                                    /GravityGenerator,1,0.1%,GravityGen,GravityGeneratorComponent
-                                    /InteriorPlate,100,10%
-                                    /LargeTube,10,2%
-                                    /Medical,15,0.1%,,MedicalComponent
-                                    /MetalGrid,20,2%
-                                    /Motor,20,4%,,MotorComponent
-                                    /PowerCell,20,1%
-                                    /RadioCommunication,10,0.5%,RadioComm,RadioCommunicationComponent
-                                    /Reactor,25,2%,,ReactorComponent
-                                    /SmallTube,50,3%
-                                    /SolarCell,20,0.1%
-                                    /SteelPlate,150,40%
-                                    /Superconductor,10,1%
-                                    /Thrust,15,5%,,ThrustComponent
-                                    /Canvas,5,0.01%
-                                    
+Component/
+/BulletproofGlass,50,2%
+/Canvas,5,0.01%
+/Computer,30,5%,,ComputerComponent
+/Construction,150,20%,,ConstructionComponent
+/Detector,10,0.1%,,DetectorComponent
+/Display,10,0.5%
+/EngineerPlushie
+/Explosives,5,0.1%,,ExplosivesComponent
+/Girder,10,0.5%,,GirderComponent
+/GravityGenerator,1,0.1%,GravityGen,GravityGeneratorComponent
+/InteriorPlate,100,10%
+/LargeTube,10,2%
+/Medical,15,0.1%,,MedicalComponent
+/MetalGrid,20,2%
+/Motor,20,4%,,MotorComponent
+/PowerCell,20,1%
+/RadioCommunication,10,0.5%,RadioComm,RadioCommunicationComponent
+/Reactor,25,2%,,ReactorComponent
+/SmallTube,50,3%
+/SolarCell,20,0.1%
+/SteelPlate,150,40%
+/Superconductor,10,1%
+/Thrust,15,5%,,ThrustComponent
+/ZoneChip
 
-                                    GasContainerObject/
-                                    /HydrogenBottle
+GasContainerObject/
+/HydrogenBottle,1
 
+Ingot/
+/Cobalt,50,3.5%
+/Gold,5,0.2%
+/Iron,200,88%
+/Magnesium,5,0.1%
+/Nickel,30,1.5%
+/Platinum,5,0.1%
+/Scrap
+/Silicon,50,2%
+/Silver,20,1%
+/Stone,50,2.5%
+/Uranium,1,0.1%
 
-                                    Ingot/
-                                    /Cobalt,73.33,3.5%
-                                    /Gold,5,0.2%
-                                    /Iron,200,88%
-                                    /Magnesium,5,0.1%
-                                    /Nickel,30,1.5%
-                                    /Platinum,5,0.1%
-                                    /Silicon,50,2%
-                                    /Silver,20,1%
-                                    /Stone,50,2.5%
-                                    /Uranium,1,0.1%
+Ore/
+/Cobalt,50,3.5%
+/Gold,5,0.2%
+/Ice
+/Iron,200,88%
+/Magnesium,5,0.1%
+/Nickel,30,1.5%
+/Platinum,5,0.1%
+/Scrap
+/Silicon,50,2%
+/Silver,20,1%
+/Stone,50,2.5%
+/Uranium,1,0.1%
 
-                                    Ore/
-                                    /Cobalt
-                                    /Gold
-                                    /Ice
-                                    /Iron
-                                    /Magnesium
-                                    /Nickel
-                                    /Platinum
-                                    /Scrap
-                                    /Silicon
-                                    /Silver
-                                    /Stone
-                                    /Uranium
+OxygenContainerObject/
+/OxygenBottle,1
 
-                                    OxygenContainerObject/
-                                    /OxygenBottle
-
-                                    PhysicalGunObject/
-                                    /AngleGrinderItem,,,,AngleGrinder
-                                    /AngleGrinder2Item,,,,AngleGrinder2
-                                    /AngleGrinder3Item,,,,AngleGrinder3
-                                    /AngleGrinder4Item,,,,AngleGrinder4
-                                    /AutomaticRifleItem,,,AutomaticRifle,AutomaticRifle
-                                    /HandDrillItem,,,,HandDrill
-                                    /HandDrill2Item,,,,HandDrill2
-                                    /HandDrill3Item,,,,HandDrill3
-                                    /HandDrill4Item,,,,HandDrill4     
-                                    /SemiAutoPistolItem,,,,SemiAutoPistol  
-                                    /BasicHandHeldLauncherItem,,,,BasicHandHeldLauncher
-                                    /ElitePistolItem,,,,EliteAutoPistol
-                                    /FullAutoPistolItem,,,,FullAutoPistol
-                                    /AdvancedHandHeldLauncherItem,,,AdvancedHandHeldLauncher,AdvancedHandHeldLauncher
-                                    /PreciseAutomaticRifleItem,,,PreciseAutomaticRifle,PreciseAutomaticRifle
-                                    /RapidFireAutomaticRifleItem,,,RapidFireAutomaticRifle,RapidFireAutomaticRifle
-                                    /UltimateAutomaticRifleItem,,,UltimateAutomaticRifle,UltimateAutomaticRifle
-                                    /WelderItem,,,,Welder
-                                    /Welder2Item,,,,Welder2
-                                    /Welder3Item,,,,Welder3
-                                    /Welder4Item,,,,Welder4
-                                    ";
+PhysicalGunObject/
+/AdvancedHandHeldLauncherItem
+/AngleGrinder2Item
+/AngleGrinder3Item
+/AngleGrinder4Item
+/AngleGrinderItem
+/AutomaticRifleItem
+/BasicHandHeldLauncherItem
+/ElitePistolItem
+/FullAutoPistolItem
+/HandDrill2Item
+/HandDrill3Item
+/HandDrill4Item
+/HandDrillItem
+/PreciseAutomaticRifleItem
+/RapidFireAutomaticRifleItem
+/SemiAutoPistolItem
+/UltimateAutomaticRifleItem
+/Welder2Item
+/Welder3Item
+/Welder4Item
+/WelderItem
+";
 
     // Item types which may have quantities which are not whole numbers.
     static readonly HashSet<string> FRACTIONAL_TYPES = new HashSet<string> { "INGOT", "ORE" };
