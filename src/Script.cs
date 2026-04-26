@@ -94,6 +94,11 @@ namespace Scripts.TIM
                                     /RapidFireAutomaticRifleGun_Mag_50rd,,,,
                                     /SemiAutoPistolMagazine,,,,
                                     /UltimateAutomaticRifleGun_Mag_30rd,,,,
+                                    /LargeCalibreAmmo,,,,
+                                    /MediumCalibreAmmo,,,,
+                                    /AutocannonClip,,,,
+                                    /LargeRailgunAmmo,,,,
+                                    /SmallRailgunAmmo,,,,                                    
 
                                     Component/
                                     /BulletproofGlass,50,2%
@@ -118,12 +123,14 @@ namespace Scripts.TIM
                                     /Superconductor,10,1%
                                     /Thrust,15,5%,,ThrustComponent
                                     /Canvas,5,0.01%
+                                    
 
                                     GasContainerObject/
                                     /HydrogenBottle
 
+
                                     Ingot/
-                                    /Cobalt,50,3.5%
+                                    /Cobalt,73.33,3.5%
                                     /Gold,5,0.2%
                                     /Iron,200,88%
                                     /Magnesium,5,0.1%
@@ -185,14 +192,13 @@ namespace Scripts.TIM
             // vanilla products
             { "ICE", "" }, { "ORGANIC", "" }, { "SCRAP", "IRON" },
 
-            // better stone products
-            // http://steamcommunity.com/sharedfiles/filedetails/?id=406244471
-            {"DENSE IRON", "IRON"}, {"ICY IRON", "IRON"}, {"HEAZLEWOODITE", "NICKEL"}, {"CATTIERITE", "COBALT"}, {"PYRITE", "GOLD"},
-            {"TAENITE", "NICKEL"}, {"COHENITE", "COBALT"}, {"KAMACITE", "NICKEL"}, {"GLAUCODOT", "COBALT"}, {"ELECTRUM", "GOLD"},
-            {"PORPHYRY", "GOLD"}, {"SPERRYLITE", "PLATINUM"}, {"NIGGLIITE", "PLATINUM"}, {"GALENA", "SILVER"}, {"CHLORARGYRITE", "SILVER"},
-            {"COOPERITE", "PLATINUM"}, {"PETZITE", "SILVER"}, {"HAPKEITE", "SILICON"}, {"DOLOMITE", "MAGNESIUM"}, {"SINOITE", "SILICON"},
-            {"OLIVINE", "MAGNESIUM"}, {"QUARTZ", "SILICON"}, {"AKIMOTOITE", "MAGNESIUM"}, {"WADSLEYITE", "MAGNESIUM"}, {"CARNOTITE", "URANIUM"},
-            {"AUTUNITE", "URANIUM"}, {"URANIAURITE", "GOLD"}
+            // better stone products - updated for v7.0.1+
+            {"[CM] DENSE IRON (FE+)", "IRON"}, {"[CM] IRON (FE)", "IRON"}, {"[CM] HEAZLEWOODITE (NI)", "NICKEL"}, {"[CM] CATTIERITE (CO)", "COBALT"}, {"[CM] PYRITE (FE,AU)", "GOLD"},
+            {"[CM] TAENITE (FE,NI)", "NICKEL"}, {"[CM] COHENITE (NI,CO)", "COBALT"}, {"[CM] KAMACITE (FE,NI,CO)", "NICKEL"}, {"[CM] GLAUCODOT (FE,CO)", "COBALT"}, {"[PM] ELECTRUM (AU,AG)", "GOLD"},
+            {"[PM] PORPHYRY (AU)", "GOLD"}, {"[PM] SPERRYLITE (PT)", "PLATINUM"}, {"[PM] NIGGLIITE (PT)", "PLATINUM"}, {"[PM] GALENA (AG)", "SILVER"}, {"[PM] CHLORARGYRITE (AG)", "SILVER"},
+            {"[PM] COOPERITE (NI,PT)", "PLATINUM"}, {"[PM] PETZITE (AG,AU)", "SILVER"}, {"[S] HAPKEITE (FE,SI)", "SILICON"}, {"[S] DOLOMITE (MG)", "MAGNESIUM"}, {"[S] SINOITE (SI)", "SILICON"},
+            {"[S] OLIVINE (SI,MG)", "MAGNESIUM"}, {"[S] QUARTZ (SI)", "SILICON"}, {"[S] AKIMOTOITE (SI,MG)", "MAGNESIUM"}, {"[S] WADSLEYITE (SI,MG)", "MAGNESIUM"}, {"[EI] CARNOTITE (U)", "URANIUM"},
+            {"[EI] AUTUNITE (U)", "URANIUM"}, {"[EI] URANIAURITE (U,AU)", "GOLD"}, {"[S] ICY STONE", "STONE"}
         };
 
     // Block types/subtypes which restrict item types/subtypes from their first
@@ -208,7 +214,7 @@ namespace Scripts.TIM
     MOB + "OxygenTank/SmallHydrogenTank:AmmoMagazine,Component,Ingot,Ore,OxygenContainerObject,PhysicalGunObject\n" +
     MOB + "Reactor:AmmoMagazine,Component,GasContainerObject,Ingot/Cobalt,Ingot/Gold,Ingot/Iron,Ingot/Magnesium,Ingot/Nickel,Ingot/Platinum,Ingot/Scrap,Ingot/Silicon,Ingot/Silver,Ingot/Stone,Ore,OxygenContainerObject,PhysicalGunObject\n" +
     MOB + "Refinery:AmmoMagazine,Component,GasContainerObject,Ingot,Ore/Ice,Ore/Organic,OxygenContainerObject,PhysicalGunObject\n" +
-    MOB + "Refinery/Blast Furnace:AmmoMagazine,Component,GasContainerObject,Ingot,Ore/Gold,Ore/Ice,Ore/Magnesium,Ore/Organic,Ore/Platinum,Ore/Silicon,Ore/Silver,Ore/Stone,Ore/Uranium,OxygenContainerObject,PhysicalGunObject\n" +
+    MOB + "Refinery/Blast Furnace:AmmoMagazine,Component,GasContainerObject,Ingot,Ore/Gold,Ore/Ice,Ore/Organic,Ore/Platinum,Ore/Silver,Ore/Uranium,OxygenContainerObject,PhysicalGunObject\n" +
     MOB + "SmallGatlingGun:AmmoMagazine/Missile200mm,AmmoMagazine/NATO_5p56x45mm," + NON_AMMO +
     MOB + "SmallMissileLauncher:AmmoMagazine/NATO_25x184mm,AmmoMagazine/NATO_5p56x45mm," + NON_AMMO +
     MOB + "SmallMissileLauncherReload:AmmoMagazine/NATO_25x184mm,AmmoMagazine/NATO_5p56x45mm," + NON_AMMO +
@@ -228,11 +234,11 @@ namespace Scripts.TIM
     #region Version
 
     // current script version
-    const int VERSION_MAJOR = 1, VERSION_MINOR = 7, VERSION_REVISION = 7;
+    const int VERSION_MAJOR = 1, VERSION_MINOR = 7, VERSION_REVISION = 8;
     /// <summary>
     /// Current script update time.
     /// </summary>
-    const string VERSION_UPDATE = "2019-04-07";
+    const string VERSION_UPDATE = "2022-04-30";
     /// <summary>
     /// A formatted string of the script version.
     /// </summary>
@@ -2010,7 +2016,10 @@ namespace Scripts.TIM
                   (refineryOres.TryGetValue(blkRfn, out ores) ? ores : refineryOres[blkRfn] = new HashSet<string>()).UnionWith(autoores);
               }
               else if (blkAsm.Enabled)
+              {
                 (assemblerItems.TryGetValue(blkAsm, out items) ? items : assemblerItems[blkAsm] = new HashSet<ItemId>()).UnionWith(autoitems);
+                blkAsm.CooperativeMode = false;
+              }
               name.Append(" ");
             }
             else if (!ParseItemValueText(block, fields, "", out itype, out isub, out priority, out amount, out ratio, out force))
@@ -2968,7 +2977,15 @@ namespace Scripts.TIM
             data = typeSubData[item.type][item.subType];
             speed = data.prdSpeed.TryGetValue("" + asm.BlockDefinition, out speed) ? speed : 1.0;
             amount = Math.Max((int)(10 * speed), 10);
-            asm.AddQueueItem(data.blueprint, (double)amount);
+            try
+            {
+              asm.AddQueueItem(data.blueprint, (double)amount);
+            }
+            catch (Exception)
+            {
+              debugText.Add("Error adding item in queue: "+data.blueprint.ToString());
+            }
+            //
             itemLevel[item] += (int)Math.Ceiling(1e8 * amount / data.quota);
             if (debug) debugText.Add("  " + asm.CustomName + " assigned " + amount + "x " + subLabel[item.subType] + " (L=" + itemLevel[item] + "%)");
           }
